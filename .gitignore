@@ -1,9 +1,13 @@
+# Sublime
+*.sublime-*
+
+# Logs
+*.log
+
+# Python
 *.py[cod]
 
-# C extensions
-*.so
-
-# Packages
+## Packages
 *.egg
 *.egg-info
 dist
@@ -19,18 +23,5 @@ lib
 lib64
 __pycache__
 
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
+## Tests
 .coverage
-.tox
-nosetests.xml
-
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
