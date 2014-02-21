@@ -3,7 +3,6 @@
 
 from setuptools import setup
 
-
 setup(
     name='testserver',
     version='0.01-b0002',
@@ -14,6 +13,15 @@ setup(
                 PUT and POST request parsing for unittest.''',
     url='https://github.com/vporoshok/testserver',
     download_url='https://github.com/vporoshok/testserver/releases',
+    packages=[
+        'testserver'
+    ],
+    install_requires=[
+    ],
+    tests_require=[
+        'httplib2'
+    ],
+    test_suite='tests',
     zip_safe=False,
     include_package_data=True,
     keywords='unittest server localhost http REST',
