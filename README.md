@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/vporoshok/testserver.png?branch=master)](https://travis-ci.org/vporoshok/testserver)
+
 testserver
 ==========
 
