@@ -31,12 +31,16 @@ class TestBase(unittest.TestCase):
 
     def test_timeout(self):
         server = testserver.Server(wait=0)
-        try:
-            server.req
+        with self.assertRaises(testserver.TimeOut) as e:
+            try:
+                server.req
 
-        except testserver.TimeOut:
+            except testserver.TimeOut as e:
 
-            self.assertTrue(True, 'Timeout wait request')
+                self.assertEqual(str(e),
+                                 "'No request handled in 00s'")
+
+                raise e
 
     def test_head(self):
         h = httplib2.Http()

@@ -6,6 +6,7 @@ import socket
 import threading
 
 from .http import HTTPServer, HTTPHandler
+from .exceptions import TimeOut
 
 
 class Server:
@@ -21,17 +22,12 @@ class Server:
     _server = None
     _httpd = None
 
-    def __init__(self, port=0, wait=5):
+    def __init__(self, port=0, wait=5, handler=HTTPHandler):
         self.port = self._check_or_get_port(port)
 
         self._wait = wait
 
-        try:
-            self._server = HTTPServer(('', self.port), HTTPHandler)
-
-        except Exception as e:
-
-            raise e
+        self._server = HTTPServer(('', self.port), handler)
 
         self._httpd = threading.Thread(target=self._server.serve_forever)
         self._httpd.setDaemon(True)
@@ -70,11 +66,3 @@ class Server:
         sock.close()
 
         return port
-
-
-class TimeOut(Exception):
-    def __init__(self, value):
-        self.value = value
-
-    def __str__(self):
-        return repr(self.value)

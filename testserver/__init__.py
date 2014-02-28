@@ -1,4 +1,6 @@
 #!/usr/bin/env
 # -*- coding: utf-8 -*-
 
-from .testserver import Server, TimeOut
+from .server import Server
+from .http import HTTPHandler
+from .exceptions import TimeOut

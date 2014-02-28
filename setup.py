@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='testserver',
-    version='0.01-b0002',
+    version='0.02-b0003',
     author='Bastrykov Evgeniy',
     author_email='vporoshok@gmail.com',
     license='MIT License',
