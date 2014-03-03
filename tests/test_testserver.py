@@ -105,7 +105,3 @@ class TestBase(unittest.TestCase):
         self.assertIsInstance(req, dict,
                               'Request catched')
         self.assertEqual(req['body'], 'Test')
-
-
-if __name__ == '__main__':
-    unittest.main()
